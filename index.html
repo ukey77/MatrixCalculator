@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<head lang="ko">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrix Calculator</title>
+  <!-- link: icon -->
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <!-- font: popins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- font: Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- favicon -->
+  <link rel="icon" href="./assets/imges/favoriteIcon_1.png" type="image/x-icon" />
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/matrixCalculator.css">
+</head>
+
+<body>
+  <div id="wrapBox" class="wrap">
+    <section class="headerWrap">
+      <h1 class="mainTitle">Matrix Calculator</h1>
+    </section>
+    <!-- Popup_Modal -->
+    <div id="popupModalBg" class="popupModalBackground">
+      <div id="popupContent" class="popupWrap">
+        <article class="popupHeaderB">
+          <h2 id="popupTitle" class="popupTitle">Calculator View</h2>
+          <i id="popupTopClosebtn" class="xi-close popupTopCloseIcon"></i>
+        </article>
+        <section class="popupMiddleB">
+          <article class="popupValueB">
+            <article id="popupInputBox" class="popupInputBox">
+              <!-- cell -->
+            </article>
+          </article>
+        </section>
+        <article class="popupBottomB">
+          <button id="popupBottomClosebtn" class="popupBottomClosebtn">
+            Close
+          </button>
+        </article>
+      </div>
+    </div>
+    <!-- Warning -->
+    <section id="rWarningBox" class="warningBox">
+      <i class="xi-info-o warningIcon" id="warningIcon"></i>
+      <h2 class="warningBtxt" id="warningBtxt">
+        A의 열과 B의 행이 동일해야 계산이 가능합니다.
+      </h2>
+    </section>
+    <!-- MatrixBoxWrap -->
+    <section class="matrixBoxWrap">
+      <section class="CalcMatrixBox">
+        <!-- frstMatrixBox -->
+        <article class="frstMatrixBox">
+          <!-- A_Content -->
+          <section class="ContMatrixWrap">
+            <article class="subTitleBox">
+              <h2 class="subMatrixTitle">Matrix A</h2>
+            </article>
+            <article class="rcAllInputBox">
+              <input id="aMatrixY" class="inputMatrixB" type="number" value="9" min="0" max="9" autofocus
+                placeholder="1~9 입력" />
+              <i class="xi-close-min outIcon"></i>
+              <input id="aMatrixX" class="inputMatrixB" type="number" value="9" min="0" max="9" placeholder="1~9 입력" />
+              <i class="xi-drag-handle"></i>
+              <button id="aOutMatrixBtn" class="outputBtn outIcon">
+                OUTPUT
+              </button>
+            </article>
+            <article class="matrixBtnBox">
+              <!-- <button id="aOutMatrixBtn" class="btnMatrix">OUTPUT</button> -->
+              <button id="aRandomMatrixBtn" class="btnMatrix">RANDOM</button>
+              <button id="aResetMatrixBtn" class="btnMatrix">RESET</button>
+              <button id="aClearMatrixBtn" class="btnMatrix">
+                <i class="xi-refresh matrixRefreshBtn"></i>
+              </button>
+            </article>
+            <section id="aOutPutWrapB" class="outPutWrapB">
+              <article id="aAreaMatrix" class="outPutBox">
+                <!-- matrixCell -->
+              </article>
+            </section>
+          </section>
+          <!--B_Content -->
+          <section class="ContMatrixWrap boderAdd_Wrap">
+            <article class="subTitleBox">
+              <h2 class="subMatrixTitle">Matrix B</h2>
+            </article>
+            <article class="rcAllInputBox">
+              <input id="bMatrixY" class="inputMatrixB" type="number" value="9" min="0" max="9" placeholder="1~9 입력" />
+              <i class="xi-close-min outIcon"></i>
+              <input id="bMatrixX" class="inputMatrixB" type="number" value="9" min="0" max="9" placeholder="1~9 입력" />
+              <i class="xi-drag-handle"></i>
+              <button id="bOutMatrixBtn" class="outputBtn outIcon">
+                OUTPUT
+              </button>
+            </article>
+            <article class="matrixBtnBox">
+              <!-- <button id="aOutMatrixBtn" class="btnMatrix">OUTPUT</button> -->
+              <button id="bRandomMatrixBtn" class="btnMatrix">RANDOM</button>
+              <button id="bResetMatrixBtn" class="btnMatrix">RESET</button>
+              <button id="bClearMatrixBtn" class="btnMatrix">
+                <i class="xi-refresh matrixRefreshBtn"></i>
+              </button>
+            </article>
+            <section id="bOutPutWrapB" class="outPutWrapB boderAdd_outPut">
+              <article id="bAreaMatrix" class="outPutBox">
+                <!-- matrixCell -->
+              </article>
+            </section>
+          </section>
+        </article>
+      </section>
+      <!-- Result_Content -->
+      <article class="resultMatrixBox">
+        <section class="ContMatrixWrap boderAdd_Wrap resultAdd_Wrap">
+          <article class="subTitleBox">
+            <h2 class="subMatrixTitle">Calculator</h2>
+          </article>
+          <article class="matrixBtnBox resultBtnBox">
+            <button id="plusCalcBtn" class="btnMatrix btnResult">
+              <i class="resultIcon xi-plus"></i>
+            </button>
+            <button id="minusCalcBtn" class="btnMatrix btnResult">
+              <i class="resultIcon xi-minus"></i>
+            </button>
+            <button id="multiplyCalcBtn" class="btnMatrix btnResult">
+              <i class="resultIcon xi-close"></i>
+            </button>
+          </article>
+
+          <section class="refreshWrap">
+            <article class="refreshCont">
+              <article id="refreshBeforeB" class="refreshSubB refreshBeforeB">
+                <!-- <i class="refreshtIcon xi-catched xi-2x"></i> -->
+                <i class="refreshtIcon xi-refresh xi-2x"></i>
+                <span class="refreshTxt">Full Refresh</span>
+              </article>
+              <article id="refreshActiveB" class="refreshSubB refreshActiveB">
+                <!-- <i class="refreshtIcon refreshIconActive xi-catched xi-2x xi-spin"></i> -->
+                <i class="refreshtIcon refreshIconActive xi-refresh xi-2x xi-spin"></i>
+
+                <span class="refreshTxt">Full Refresh</span>
+              </article>
+            </article>
+          </section>
+
+          <section id="cOutPutWrapB" class="outPutWrapB boderAdd_outPut cOutPutWrapB">
+            <i id="popupOpenBtn" class="xi-expand popupBtn"></i>
+            <!--팝업오픈 아이콘-->
+            <article id="cOutPutBox" class="outPutBox boderAdd_outPut">
+              <!-- matrixCell -->
+            </article>
+          </section>
+        </section>
+      </article>
+    </section>
+    <!-- MenuBar -->
+    <section id="sideMainB" class="sideMainB">
+      <i id="sideBeforeIcon" class="xi-align-justify sideBarIcon sideBeforeIcon"></i>
+      <i id="sideAfterIcon" class="xi-hamburger-back sideBarIcon sideAfterIcon"></i>
+      <ul class="sideUl">
+        <li><a href="https://fanatical-music-91c.notion.site/Matrix-Calculator-23b233ab5ab849b4b6cf4d7f1d0e68ff"
+            target="_blank">Progress Plan</a>
+        </li>
+        <li><a href="#" target="_blank">Code View</a></li>
+        <li><a href="MatrixCalculator_김유진.pdf" download="MatrixCalculator_김유진.pdf">Post Review</a>
+      </ul>
+    </section>
+  </div>
+
+  <!-- script -->
+  <script src="./script/matrixCalculator.js" defer></script>
+</body>
+
+</html>
