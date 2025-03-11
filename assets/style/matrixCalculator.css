@@ -1,0 +1,548 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+  /*드래그 방지*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+button {
+  cursor: pointer;
+}
+
+.wrap {
+  position: relative;
+  width: 99.8%;
+  height: 99vh;
+  background-color: #fff;
+}
+
+/* header */
+.headerWrap {
+  width: 100%;
+  height: 380px;
+  background-color: #333;
+  border-radius: 0 0 80px 0;
+  text-align: center;
+}
+
+.mainTitle {
+  color: #fff;
+  font-size: 48px;
+  padding-top: 3rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* matrixBox */
+.matrixBoxWrap {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 1340px;
+  height: 70%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* calcB */
+.CalcMatrixBox {
+  display: flex;
+  width: 848px;
+  height: 637px;
+  background: #ddd;
+  border-radius: 20px 20px 85px 20px;
+  background: linear-gradient(135deg, #dfcae2, #eaccf2, #badbdb 80%);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* frstMatrixBox */
+.frstMatrixBox {
+  width: 864px;
+  height: 637px;
+  /* border: 1px solid red; */
+  border-radius: 20px 0px 0px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.ContMatrixWrap {
+  background-color: #ffffff6b;
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  text-align: center;
+  /* border: 1px solid orange; */
+}
+
+.subTitleBox {
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 8%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.subMatrixTitle {
+  font-size: 26px;
+  /* border: 1px solid blue; */
+}
+
+.rcAllInputBox {
+  width: 100%;
+  height: 10%;
+  padding: 14px;
+  /* border: 1px solid red; */
+}
+
+.inputMatrixB {
+  width: 100px;
+  height: 40px;
+  outline: 0;
+  text-align: center;
+  border: 1px solid #5f5f5f;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.inputMatrixB:focus {
+  border-color: #333;
+  background-color: #f4f4f400;
+  outline: none;
+}
+
+.inputMatrixB::placeholder {
+  font-size: 13px;
+}
+
+.matrixBtnBox {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 1px solid orange; */
+}
+
+.resultBtnBox {
+  padding-top: 7px;
+}
+
+.btnMatrix {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  margin-top: 7px;
+  background-color: #868686e5;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.btnMatrix:active {
+  margin-top: 8px;
+  background: #676767e5;
+}
+
+/* result output */
+.outputBtn {
+  width: 100px;
+  height: 40px;
+  background-color: #484848;
+  color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #333;
+  outline: 0;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.outputBtn:active {
+  background-color: #585858e5;
+  border: 1px solid #585858e5;
+}
+
+.outIcon {
+  margin: 1px;
+}
+
+/* outPut */
+.outPutWrapB {
+  background: #ffffff53;
+  width: 95%;
+  height: 67%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 13px;
+  /* border: 1px solid red; */
+  padding-top: 18px;
+  opacity: 0;
+}
+
+.outPutBox {
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+/* matrixCell */
+.matrixCell {
+  width: 34px;
+  height: 34px;
+  margin: 2px;
+  outline: 0;
+  text-align: center;
+  border: 1px solid #8c8c8c;
+  border-radius: 3px;
+}
+
+.matrixCell:focus {
+  border: 0.11rem solid #606060;
+  outline: 0;
+  background-color: #a3e3de67;
+}
+
+/* boxB 오른쪽 하단 boder-radius추가 */
+.boderAdd_Wrap {
+  border-radius: 10px 10px 70px 10px;
+}
+
+.boderAdd_outPut {
+  border-radius: 10px 10px 60px 10px;
+}
+
+/* resultB */
+.resultMatrixBox {
+  width: 432px;
+  height: 637px;
+  border-radius: 20px 20px 85px 20px;
+  background-color: #badbdb;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+  margin-left: 45px;
+  text-align: center;
+}
+
+.resultAdd_Wrap {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.btnMatrix .icon {
+  color: #fff;
+}
+
+/* result > refresh 영역 */
+.refreshWrap {
+  width: 90%;
+  height: 10%;
+  margin: 0 auto;
+  border-top: 0.12rem solid #686868;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.refreshCont {
+  position: relative;
+  width: 160px;
+  height: 30px;
+  /* border: 1px solid red; */
+}
+
+.refreshSubB,
+.refreshActiveB {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid red; */
+}
+
+.refreshTxt {
+  padding-left: 3px;
+  letter-spacing: 0.01rem;
+  font-size: 18px;
+  /* border: 1px solid green; */
+}
+
+.refreshActiveB {
+  opacity: 0;
+}
+
+/* active */
+.refreshCont:hover .refreshActiveB {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.refreshCont:hover .refreshActiveB>.refreshTxt {
+  font-weight: 700;
+}
+
+.refreshCont:hover .refreshBeforeB {
+  opacity: 0;
+}
+
+/* btnResult */
+.btnResult {
+  /* background-color: #a6d5d5; */
+  /* background-color: #92cfcf; */
+  background-color: #b5dbdb;
+}
+
+.btnResult:active {
+  background-color: #a6d5d5;
+}
+
+.resultIcon {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* 구글링 : inputBox 증가감소 화살표 제거 */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 새로고침 icon */
+.matrixRefreshBtn {
+  color: #fff;
+  font-size: 17px;
+}
+
+/* popup */
+.cOutPutWrapB {
+  position: relative;
+}
+
+.popupBtn {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  color: #fff;
+  background-color: #484848;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.popupBtn:active {
+  background: #8f9090;
+}
+
+/* 팝업 기본값 숨기기 */
+.wrap {
+  position: relative;
+}
+
+.popupModalBackground {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #47474746;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+}
+
+.popupWrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  display: none;
+}
+
+.popupHeaderB {
+  position: relative;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.popupTitle {
+  font-size: 28px;
+}
+
+.popupTopCloseIcon {
+  position: absolute;
+  right: 3%;
+  top: 22%;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popupMiddleB {
+  width: 100%;
+  height: 77%;
+  /* border: 1px solid orange; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupMiddleB .popupValueB {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  background-color: #9cc8c85b;
+}
+
+.popupInputBox {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.PopupCell {
+  width: 62px;
+  height: 45px;
+  margin: 2px;
+  font-size: 16px;
+}
+
+.PopupCell:focus {
+  background-color: #ddd;
+}
+
+.popupBottomB {
+  width: 100%;
+  height: 13%;
+  /* border: 1px solid green; */
+  text-align: center;
+}
+
+.popupBottomClosebtn {
+  left: 50px;
+  width: 160px;
+  height: 47px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  background-color: #9cc8c8;
+  border: 0px;
+  outline: 0px;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+}
+
+.popupBottomClosebtn:hover {
+  background-color: #8fc3c3;
+}
+
+/* warningBox */
+.warningBox {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translate(-50%);
+  background: #b5dbdb;
+  width: 600px;
+  height: 40px;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+}
+
+.warningBtxt {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.warningIcon {
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 6px;
+  color: #087878;
+}
+
+/* sidebar */
+
+
+.sideMainB {
+  position: absolute;
+  left: -200px;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.839);
+  transition: 0.8s;
+}
+
+.sideBarIcon {
+  position: absolute;
+  color: #fff;
+  right: -35px;
+  top: 5px;
+  font-size: 30px;
+  cursor: pointer;
+
+}
+
+.sideAfterIcon {
+  display: none;
+}
+
+.sideUl {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
+.sideUl>li>a {
+  width: 75%;
+  padding: 10px 0;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  margin: 7px 0;
+  border-radius: 2px;
+}
+
+.sideUl>li>a:hover {
+  background: rgba(104, 104, 104, 0.914);
+}
+
+.sideUl>li>a:active {
+  background: rgba(104, 104, 104, 0.914);
+}
